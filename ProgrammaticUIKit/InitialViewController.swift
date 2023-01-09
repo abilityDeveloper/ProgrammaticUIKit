@@ -22,8 +22,7 @@ class InitialViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Homepage"
-        view.backgroundColor = .systemGroupedBackground
+        setupViewController()
         safeArea = view.layoutMarginsGuide
         setupTableView()
     }
@@ -40,8 +39,29 @@ class InitialViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
+    
+    
+    private func setupViewController() {
+        self.title = "Homepage"
+        view.backgroundColor = .systemGroupedBackground
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape.2.fill"),
+                                                                 style: .done,
+                                                                 target: self,
+                                                                 action: #selector(trailingButtonAction))
+    }
+    
+    
+    @objc func trailingButtonAction() {
+        print("tbd...")
+    }
 
 }
+
+
+
+
+
+
 
 
 //MARK: -
