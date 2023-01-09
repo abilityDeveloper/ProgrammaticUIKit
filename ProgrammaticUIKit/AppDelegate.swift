@@ -17,8 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 13.0, *) {
             //Use SceneDelegate instead as entry point.
         } else {
+            let rootNavController = UINavigationController()
+            let initialViewController = InitialViewController()
+            rootNavController.viewControllers = [initialViewController]
+            
             window = UIWindow(frame: UIScreen.main.bounds)
-            window?.rootViewController = InitialViewController()
+            window?.rootViewController = rootNavController
             window?.makeKeyAndVisible()
         }
         return true
